@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=OwnedCompany
+comment1.params=stockPrice\ yestStockPrice\ inNews\ negPublicity\ posPublicity\ directCompetion\ tappedMarket\ name
+comment1.target=OwnedCompany(double,\ double,\ boolean,\ boolean,\ boolean,\ boolean,\ boolean,\ java.lang.String)
+comment2.params=thing
+comment2.target=int\ compareTo(Company)
+comment3.params=
+comment3.target=java.lang.String\ toString()
+numComments=4

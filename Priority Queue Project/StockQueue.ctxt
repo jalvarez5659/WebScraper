@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=StockQueue
+comment1.params=
+comment1.target=StockQueue()
+comment2.params=toAdd
+comment2.target=void\ addComp(Company)
+comment3.params=
+comment3.target=void\ buy()
+comment4.params=
+comment4.target=void\ optimalBuy()
+comment5.params=
+comment5.target=void\ sell()
+comment6.params=
+comment6.target=void\ optimalSell()
+comment7.params=
+comment7.target=java.lang.String\ toString()
+comment8.params=
+comment8.target=void\ main()
+numComments=9
