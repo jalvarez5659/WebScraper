@@ -55,16 +55,22 @@ public class ObtainData
         String regex = "\\d\\d,\\d\\d\\d\\.\\d\\d";
         Pattern p = Pattern.compile(regex);
         Matcher m = p.matcher(line);
+        ArrayList<Double> data = new ArrayList<Double>(5);
+        int i = 0;
         while(m.find())
         {
             System.out.println(m.group(0));
+            data.add(Double.parseDouble(m.group(0).substring(0,2) + m.group(0).substring(3,9)));
+            System.out.println(data.get(i));
+            i++;
         }
+        regex = "<span class=.posData.>(.)(\\d+\\.\\d+)</span>";
     }
 
     public static void test()
     {
-        String thing = "12345";
-        int thingy = Integer.parseInt(thing.substring(1,3) + thing.substring(3,5));
+        String thing = "12345.0";
+        double thingy = Double.parseDouble(thing.substring(1,3) + thing.substring(3,7));
         System.out.println(thingy);
     }
 }

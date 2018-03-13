@@ -2,7 +2,10 @@
 public class Company implements Comparable<Company>
 {
     private double stockPrice;
-    private double yestStockPrice;
+    private double previousClose;
+    private double open;
+    private double dayHigh;
+    private double dayLow;
     private double projStockPrice;
     private boolean inNews;
     private boolean negPublicity;
@@ -12,10 +15,10 @@ public class Company implements Comparable<Company>
     private final String name;
     private double change;
 
-    public Company(double stockPrice, double yestStockPrice, boolean inNews, boolean negPublicity, boolean posPublicity, boolean directCompetion, boolean tappedMarket, String name)
+    public Company(double stockPrice, double previousClose, boolean inNews, boolean negPublicity, boolean posPublicity, boolean directCompetion, boolean tappedMarket, String name)
     {
         this.stockPrice = stockPrice;
-        this.yestStockPrice = yestStockPrice;
+        this.previousClose = previousClose;
         this.inNews = inNews;
         this.negPublicity = negPublicity;
         this.posPublicity = posPublicity;
@@ -60,14 +63,14 @@ public class Company implements Comparable<Company>
         setprojStockPrice();
     }
 
-    public double getyestStockPrice()
+    public double getpreviousClose()
     {
-        return(yestStockPrice);
+        return(previousClose);
     }
 
-    public void setyestStockPrice(double yestStockPrice)
+    public void setpreviousClose(double previousClose)
     {
-        this.yestStockPrice = yestStockPrice;
+        this.previousClose = previousClose;
         setprojStockPrice();
     }
 
@@ -78,7 +81,7 @@ public class Company implements Comparable<Company>
 
     public void setprojStockPrice()
     {
-        double toRet = (stockPrice - yestStockPrice) + stockPrice;
+        double toRet = (stockPrice - previousClose) + stockPrice;
         boolean other = false;
         if(inNews)
         {
@@ -95,9 +98,9 @@ public class Company implements Comparable<Company>
                 toRet += stockPrice*.1;
             }
             other = true;
-        } else if(stockPrice - yestStockPrice < 0)
+        } else if(stockPrice - previousClose < 0)
         {
-            toRet = ((stockPrice - yestStockPrice) * .5) + stockPrice;
+            toRet = ((stockPrice - previousClose) * .5) + stockPrice;
         }
 
         if(directCompetion && !other)
