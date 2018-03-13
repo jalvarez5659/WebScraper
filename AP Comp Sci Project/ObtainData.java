@@ -65,6 +65,37 @@ public class ObtainData
             i++;
         }
         regex = "<span class=.posData.>(.)(\\d+\\.\\d+)</span>";
+        p = Pattern.compile(regex);
+        m = p.matcher(line);
+        if(m.find())
+        {
+            System.out.println(m.group(0));
+            Double thing = Double.parseDouble(m.group(2));
+            if(m.group(1).equals("+"))
+            {
+                data.add(thing);
+            }else{
+                data.add(0-thing);
+            }
+            System.out.println(data.get(i));
+            i++;
+        }
+        regex = "<span class=.posData.>(.)(\\d+\\.\\d+)\\%</span>";
+        p = Pattern.compile(regex);
+        m = p.matcher(line);
+        while(m.find())
+        {
+            System.out.println(m.group(0));
+            Double thing = Double.parseDouble(m.group(2));
+            if(m.group(1).equals("+"))
+            {
+                data.add(thing);
+            }else{
+                data.add(0-thing);
+            }
+            System.out.println(data.get(i));
+            i++;
+        }
     }
 
     public static void test()
