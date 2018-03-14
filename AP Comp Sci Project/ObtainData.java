@@ -67,7 +67,7 @@ public class ObtainData
         regex = "<span class=.posData.>(.)(\\d+\\.?\\d+)</span>";
         p = Pattern.compile(regex);
         m = p.matcher(line);
-        if(m.find())
+        while(m.find())
         {
             System.out.println(m.group(0));
             Double thing = Double.parseDouble(m.group(2));
