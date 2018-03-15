@@ -8,7 +8,7 @@ public class ObtainData
 {
     public ObtainData()
     {
-        
+
     }
 
     public static void main()
@@ -35,13 +35,13 @@ public class ObtainData
             {
                 /*if(inputLine.length() > 26)
                 {
-                    if(inputLine.substring(15,26).equals("last_599362"))
-                    {
-                        String other = in.readLine();
-                        String next = in.readLine();
-                        double thing = (((Double.parseDouble(other.substring(1,3) + other.substring(4,5))) * 100) + Double.parseDouble(next.substring(12,14) + next.substring(15,17)));
-                        System.out.println(thing);
-                    }
+                if(inputLine.substring(15,26).equals("last_599362"))
+                {
+                String other = in.readLine();
+                String next = in.readLine();
+                double thing = (((Double.parseDouble(other.substring(1,3) + other.substring(4,5))) * 100) + Double.parseDouble(next.substring(12,14) + next.substring(15,17)));
+                System.out.println(thing);
+                }
                 }*/
                 line += inputLine + " ";
                 //System.out.println(inputLine);
@@ -51,51 +51,91 @@ public class ObtainData
             System.out.println("Didn't work");
             System.exit(1);
         }
-        
-        String regex = "\\d\\d,\\d\\d\\d\\.\\d\\d";
-        Pattern p = Pattern.compile(regex);
-        Matcher m = p.matcher(line);
-        ArrayList<Double> data = new ArrayList<Double>(5);
+
+        ArrayList<Double> data = new ArrayList<Double>();
         int i = 0;
-        while(m.find())
+        i = betterFind(line, "\\d\\d,\\d\\d\\d\\.\\d\\d", data, i, true, false);
+        System.out.println(data.get(i-1));
+        i = betterFind(line, "<span class=.posData.>(.)(\\d+\\.?\\d+)</span>", data, i, false, true);
+        System.out.println(data.get(i-1));
+
+        /*String regex = "\\d\\d,\\d\\d\\d\\.\\d\\d";
+        Pattern p = Pattern.compile(regex);
+        Matcher m = p.matcher(line);*/
+
+        /*while(m.find())
         {
-            System.out.println(m.group(0));
-            data.add(Double.parseDouble(m.group(0).substring(0,2) + m.group(0).substring(3,9)));
-            System.out.println(data.get(i));
-            i++;
-        }
-        regex = "<span class=.posData.>(.)(\\d+\\.?\\d+)</span>";
+        System.out.println(m.group(0));
+        data.add(Double.parseDouble(m.group(0).substring(0,2) + m.group(0).substring(3,9)));
+        System.out.println(data.get(i));
+        i++;
+        }*/
+        /*regex = "<span class=.posData.>(.)(\\d+\\.?\\d+)</span>";
         p = Pattern.compile(regex);
         m = p.matcher(line);
         while(m.find())
         {
-            System.out.println(m.group(0));
-            Double thing = Double.parseDouble(m.group(2));
-            if(m.group(1).equals("+"))
-            {
-                data.add(thing);
-            }else{
-                data.add(0-thing);
-            }
-            System.out.println(data.get(i));
-            i++;
+        System.out.println(m.group(0));
+        Double thing = Double.parseDouble(m.group(2));
+        if(m.group(1).equals("+"))
+        {
+        data.add(thing);
+        }else{
+        data.add(0-thing);
+        }
+        System.out.println(data.get(i));
+        i++;
         }
         regex = "<span class=.posData.>(.)(\\d+\\.\\d+)\\%</span>";
         p = Pattern.compile(regex);
         m = p.matcher(line);
         if(m.find())
         {
-            System.out.println(m.group(0));
-            Double thing = Double.parseDouble(m.group(2));
-            if(m.group(1).equals("+"))
-            {
-                data.add(thing);
-            }else{
-                data.add(0-thing);
-            }
-            System.out.println(data.get(i));
-            i++;
+        System.out.println(m.group(0));
+        Double thing = Double.parseDouble(m.group(2));
+        if(m.group(1).equals("+"))
+        {
+        data.add(thing);
+        }else{
+        data.add(0-thing);
         }
+        System.out.println(data.get(i));
+        i++;
+        }*/
+    }
+
+    public static int betterFind(String line, String regex, ArrayList<Double> data, int i, boolean getAll, boolean change)
+    {
+        Pattern p = Pattern.compile(regex);
+        Matcher m = p.matcher(line);
+        boolean stop = true;
+        if(change == false)
+        {
+            while(m.find() && stop)
+            {
+                System.out.println(m.group(0));
+                data.add(Double.parseDouble(m.group(0).substring(0,2) + m.group(0).substring(3,9)));
+                System.out.println(data.get(i));
+                i++;
+                stop = getAll;
+            }
+        }else{
+            while(m.find() && stop)
+            {
+                System.out.println(m.group(0));
+                Double thing = Double.parseDouble(m.group(2));
+                if(m.group(1).equals("+"))
+                {
+                    data.add(thing);
+                }else{
+                    data.add(0-thing);
+                }
+                System.out.println(data.get(i));
+                i++;
+                stop = getAll;
+            }
+        }
+        return(i);
     }
 
     public static void test()
