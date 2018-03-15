@@ -191,4 +191,8 @@ public class Company implements Comparable<Company>
     {
         return(name + " has a current stock price of $" + stockPrice + " and has a projected stock price of $" + projStockPrice + ".");
     }
+    public static void main(String args[])
+    {
+        
+    }
 }
