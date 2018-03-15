@@ -14,7 +14,17 @@ public class Company implements Comparable<Company>
     private boolean tappedMarket;
     private final String name;
     private double change;
+    private boolean projIncrease;
 
+    /*public Company(double stockPrice, double previousClose, double open, double dayHigh, double dayLow)
+    {
+        this.stockPrice = stockPrice;
+        this.previousClose = previousClose;
+        this.open = open;
+        this.dayHigh = dayHigh;
+        this.dayLow = dayLow;
+    }*/
+    
     public Company(double stockPrice, double previousClose, boolean inNews, boolean negPublicity, boolean posPublicity, boolean directCompetion, boolean tappedMarket, String name)
     {
         this.stockPrice = stockPrice;
