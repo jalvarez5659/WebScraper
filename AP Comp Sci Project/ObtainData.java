@@ -8,10 +8,10 @@ public class ObtainData
 {
     public ObtainData()
     {
-
+        
     }
 
-    public static void main()
+    public static void main(String[] args)
     {
         /*try{
         URL oracle = new URL("https://www.oracle.com/index.html");
