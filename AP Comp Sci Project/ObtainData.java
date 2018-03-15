@@ -8,7 +8,7 @@ public class ObtainData
 {
     public ObtainData()
     {
-
+        
     }
 
     public static void main()
