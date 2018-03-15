@@ -30,19 +30,8 @@ public class ObtainData
             URL dow = new URL("http://money.cnn.com/data/markets/dow/");
             BufferedReader in = new BufferedReader(new InputStreamReader(dow.openStream()));
             String inputLine;
-            //"<td data-field="last">24908.47</td>"
             while((inputLine = in.readLine()) != null)
             {
-                /*if(inputLine.length() > 26)
-                {
-                if(inputLine.substring(15,26).equals("last_599362"))
-                {
-                String other = in.readLine();
-                String next = in.readLine();
-                double thing = (((Double.parseDouble(other.substring(1,3) + other.substring(4,5))) * 100) + Double.parseDouble(next.substring(12,14) + next.substring(15,17)));
-                System.out.println(thing);
-                }
-                }*/
                 line += inputLine + " ";
                 //System.out.println(inputLine);
             }
@@ -56,8 +45,11 @@ public class ObtainData
         int i = 0;
         i = betterFind(line, "\\d\\d,\\d\\d\\d\\.\\d\\d", data, i, true, false);
         System.out.println(data.get(i-1));
-        i = betterFind(line, "<span class=.posData.>(.)(\\d+\\.?\\d+)</span>", data, i, false, true);
+        i = betterFind(line, "<span class=.posData.>(.)(\\d+\\.?\\d+)</span>", data, i, true, true);
         System.out.println(data.get(i-1));
+        i = betterFind(line, "<span class=.posData.>(.)(\\d+\\.\\d+)\\%</span>", data, i, true, true);
+        System.out.println(data.get(i-1));
+
 
         /*String regex = "\\d\\d,\\d\\d\\d\\.\\d\\d";
         Pattern p = Pattern.compile(regex);
