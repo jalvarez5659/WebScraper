@@ -6,50 +6,57 @@ import java.awt.event.ActionEvent;
 public class Company implements Comparable<Company>
 {
     private JFrame frame;
-    private JPanel p;
-    private JCheckBox iNews;
-    private JCheckBox negP;
-    private JCheckBox posP;
-    private JCheckBox dComp;
-    private JCheckBox tMark;
+    private JPanel panel;
     private double stockPrice;
     private double previousClose;
     private double open;
     private double dayHigh;
     private double dayLow;
     private double projStockPrice;
+    private double percentChange;
     private boolean inNews;
     private boolean negPublicity;
     private boolean posPublicity;
-    private boolean directCompetion;
+    private boolean directCompetition;
     private boolean tappedMarket;
     private final String name;
     private double change;
     private boolean projIncrease;
 
-    /*public Company(double stockPrice, double previousClose, double open, double dayHigh, double dayLow)
+    public Company(double stockPrice, double previousClose, double open, double dayHigh, double dayLow, double percentChange)
     {
         this.stockPrice = stockPrice;
         this.previousClose = previousClose;
         this.open = open;
         this.dayHigh = dayHigh;
         this.dayLow = dayLow;
+        this.percentChange = percentChange;
         frame = new JFrame();
         frame.setSize(500,500);
         frame.setTitle("Extra Research");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        JPanel panel
-        
-    }*/
+        panel = new JPanel();
+        panel.setLayout(new BorderLayout());
+        JCheckBox iNews = new JCheckBox("In News");
+        panel.add(iNews);
+        JCheckBox nPub = new JCheckBox("Negative Publicity");
+        panel.add(nPub);
+        JCheckBox pPub = new JCheckBox("Positive Publicity");
+        panel.add(pPub);
+        frame.add(panel);
+        frame.pack();
+        frame.setLocationByPlatform(true);
+        frame.setVisible(true);
+    }
     
-    public Company(double stockPrice, double previousClose, boolean inNews, boolean negPublicity, boolean posPublicity, boolean directCompetion, boolean tappedMarket, String name)
+    public Company(double stockPrice, double previousClose, boolean inNews, boolean negPublicity, boolean posPublicity, boolean directCompetition, boolean tappedMarket, String name)
     {
         this.stockPrice = stockPrice;
         this.previousClose = previousClose;
         this.inNews = inNews;
         this.negPublicity = negPublicity;
         this.posPublicity = posPublicity;
-        this.directCompetion = directCompetion;
+        this.directCompetition = directCompetition;
         this.tappedMarket = tappedMarket;
         this.name = name;
         setprojStockPrice();
@@ -130,7 +137,7 @@ public class Company implements Comparable<Company>
             toRet = ((stockPrice - previousClose) * .5) + stockPrice;
         }
 
-        if(directCompetion && !other)
+        if(directcompetition && !other)
         {
             toRet = toRet * .8;
         }
@@ -176,14 +183,14 @@ public class Company implements Comparable<Company>
         setprojStockPrice();
     }
 
-    public boolean getdirectCompetion()
+    public boolean getdirectcompetition()
     {
-        return(directCompetion);
+        return(directcompetition);
     }
 
-    public void setdirectCompetion(boolean directCompetition)
+    public void setdirectcompetition(boolean directCompetition)
     {
-        this.directCompetion = directCompetion;
+        this.directcompetition = directcompetition;
         setprojStockPrice();
     }
 

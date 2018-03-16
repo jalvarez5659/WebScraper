@@ -1,9 +1,9 @@
 
 public class OwnedCompany extends Company implements Comparable<Company>
 {
-    public OwnedCompany(double stockPrice, double previousClose, boolean inNews, boolean negPublicity, boolean posPublicity, boolean directCompetion, boolean tappedMarket, String name)
+    public OwnedCompany(double stockPrice, double previousClose, boolean inNews, boolean negPublicity, boolean posPublicity, boolean directcompetition, boolean tappedMarket, String name)
     {
-        super(stockPrice, previousClose, inNews, negPublicity, posPublicity, directCompetion, tappedMarket, name);
+        super(stockPrice, previousClose, inNews, negPublicity, posPublicity, directcompetition, tappedMarket, name);
     }
     
     @Override
