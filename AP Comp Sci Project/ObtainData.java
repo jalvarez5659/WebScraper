@@ -15,7 +15,7 @@ public class ObtainData
         
     }
 
-    public static void main(String[] args)
+    public static void otherMain(String[] args)
     {
         /*try{
         URL oracle = new URL("https://www.oracle.com/index.html");
@@ -141,8 +141,9 @@ public class ObtainData
         System.out.println(thingy);
     }
     
-    public static void extraTest()
+    public static void main(String[] args)
     {
+        
         JFrame frame = new JFrame();
         frame.setSize(600,600);
         frame.setTitle("Extra Research");
