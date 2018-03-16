@@ -49,8 +49,8 @@ public class ObtainData
         System.out.println(data.get(i-1));
         i = betterFind(line, "<span class=.posData.>(.)(\\d+\\.\\d+)\\%</span>", data, i, true, true);
         System.out.println(data.get(i-1));
-
-
+        //Company Dow = new Company(d
+        
         /*String regex = "\\d\\d,\\d\\d\\d\\.\\d\\d";
         Pattern p = Pattern.compile(regex);
         Matcher m = p.matcher(line);*/
@@ -96,12 +96,12 @@ public class ObtainData
         }*/
     }
 
-    public static int betterFind(String line, String regex, ArrayList<Double> data, int i, boolean getAll, boolean change)
+    public static int betterFind(String line, String regex, ArrayList<Double> data, int i, boolean getAll, boolean wholeLine)
     {
         Pattern p = Pattern.compile(regex);
         Matcher m = p.matcher(line);
         boolean stop = true;
-        if(change == false)
+        if(wholeLine == false)
         {
             while(m.find() && stop)
             {

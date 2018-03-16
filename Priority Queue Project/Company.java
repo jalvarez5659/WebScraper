@@ -1,6 +1,17 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Company implements Comparable<Company>
 {
+    private JFrame frame;
+    private JPanel p;
+    private JCheckBox iNews;
+    private JCheckBox negP;
+    private JCheckBox posP;
+    private JCheckBox dComp;
+    private JCheckBox tMark;
     private double stockPrice;
     private double previousClose;
     private double open;
@@ -23,6 +34,12 @@ public class Company implements Comparable<Company>
         this.open = open;
         this.dayHigh = dayHigh;
         this.dayLow = dayLow;
+        frame = new JFrame();
+        frame.setSize(500,500);
+        frame.setTitle("Extra Research");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        JPanel panel
+        
     }*/
     
     public Company(double stockPrice, double previousClose, boolean inNews, boolean negPublicity, boolean posPublicity, boolean directCompetion, boolean tappedMarket, String name)

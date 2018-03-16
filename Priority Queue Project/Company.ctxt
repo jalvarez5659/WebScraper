@@ -2,6 +2,7 @@
 comment0.target=Company
 comment1.params=stockPrice\ previousClose\ inNews\ negPublicity\ posPublicity\ directCompetion\ tappedMarket\ name
 comment1.target=Company(double,\ double,\ boolean,\ boolean,\ boolean,\ boolean,\ boolean,\ java.lang.String)
+comment1.text=public\ Company(double\ stockPrice,\ double\ previousClose,\ double\ open,\ double\ dayHigh,\ double\ dayLow)\n\ \ \ \ {\n\ \ \ \ \ \ \ \ this.stockPrice\ \=\ stockPrice;\n\ \ \ \ \ \ \ \ this.previousClose\ \=\ previousClose;\n\ \ \ \ \ \ \ \ this.open\ \=\ open;\n\ \ \ \ \ \ \ \ this.dayHigh\ \=\ dayHigh;\n\ \ \ \ \ \ \ \ this.dayLow\ \=\ dayLow;\n\ \ \ \ \ \ \ \ frame\ \=\ new\ JFrame();\n\ \ \ \ \ \ \ \ frame.setSize(500,500);\n\ \ \ \ \ \ \ \ frame.setTitle("Extra\ Research");\n\ \ \ \ \ \ \ \ frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);\n\ \ \ \ \ \ \ \ JPanel\ panel\n\ \ \ \ \ \ \ \ \n}
 comment10.params=inNews
 comment10.target=void\ setinNews(boolean)
 comment11.params=
@@ -30,6 +31,8 @@ comment21.params=
 comment21.target=void\ setchange()
 comment22.params=
 comment22.target=java.lang.String\ toString()
+comment23.params=args
+comment23.target=void\ main(java.lang.String[])
 comment3.params=
 comment3.target=double\ getstockPrice()
 comment4.params=stockPrice
@@ -44,4 +47,4 @@ comment8.params=
 comment8.target=void\ setprojStockPrice()
 comment9.params=
 comment9.target=boolean\ getinNews()
-numComments=23
+numComments=24

@@ -2,9 +2,9 @@
 comment0.target=ObtainData
 comment1.params=
 comment1.target=ObtainData()
-comment2.params=
-comment2.target=void\ main()
-comment3.params=line\ regex\ data\ i\ getAll\ change
+comment2.params=args
+comment2.target=void\ main(java.lang.String[])
+comment3.params=line\ regex\ data\ i\ getAll\ wholeLine
 comment3.target=int\ betterFind(java.lang.String,\ java.lang.String,\ java.util.ArrayList,\ int,\ boolean,\ boolean)
 comment4.params=
 comment4.target=void\ test()
