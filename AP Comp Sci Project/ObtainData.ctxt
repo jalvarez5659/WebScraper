@@ -8,4 +8,6 @@ comment3.params=line\ regex\ data\ i\ getAll\ wholeLine
 comment3.target=int\ betterFind(java.lang.String,\ java.lang.String,\ java.util.ArrayList,\ int,\ boolean,\ boolean)
 comment4.params=
 comment4.target=void\ test()
-numComments=5
+comment5.params=
+comment5.target=void\ extraTest()
+numComments=6

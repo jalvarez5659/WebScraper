@@ -137,7 +137,7 @@ public class Company implements Comparable<Company>
             toRet = ((stockPrice - previousClose) * .5) + stockPrice;
         }
 
-        if(directcompetition && !other)
+        if(directCompetition && !other)
         {
             toRet = toRet * .8;
         }
@@ -183,14 +183,14 @@ public class Company implements Comparable<Company>
         setprojStockPrice();
     }
 
-    public boolean getdirectcompetition()
+    public boolean getdirectCompetition()
     {
-        return(directcompetition);
+        return(directCompetition);
     }
 
-    public void setdirectcompetition(boolean directCompetition)
+    public void setdirectCompetition(boolean directCompetition)
     {
-        this.directcompetition = directcompetition;
+        this.directCompetition = directCompetition;
         setprojStockPrice();
     }
 

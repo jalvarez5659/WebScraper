@@ -3,6 +3,10 @@ import java.io.*;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 import java.util.*;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class ObtainData
 {
@@ -135,5 +139,36 @@ public class ObtainData
         String thing = "12345.0";
         double thingy = Double.parseDouble(thing.substring(1,3) + thing.substring(3,7));
         System.out.println(thingy);
+    }
+    
+    public static void extraTest()
+    {
+        JFrame frame = new JFrame();
+        frame.setSize(600,600);
+        frame.setTitle("Extra Research");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        JPanel mainPanel = new JPanel();
+        mainPanel.setLayout(new BorderLayout());
+
+        JPanel checkBoxPanel = new JPanel();
+        JPanel buttonPanel = new JPanel();
+
+        JCheckBox iNews = new JCheckBox("In News");
+        checkBoxPanel.add(iNews);
+        JCheckBox nPub = new JCheckBox("Negative Publicity");
+        checkBoxPanel.add(nPub);
+        JCheckBox pPub = new JCheckBox("Positive Publicity");
+        checkBoxPanel.add(pPub);
+        JCheckBox dComp = new JCheckBox("Direct Competition");
+        checkBoxPanel.add(dComp);
+        JButton button = new JButton("Start Program");
+        mainPanel.add(checkBoxPanel);
+        mainPanel.add(buttonPanel);
+
+        frame.add(mainPanel);
+
+        frame.pack();
+        frame.setLocationByPlatform(true);
+        frame.setVisible(true);
     }
 }

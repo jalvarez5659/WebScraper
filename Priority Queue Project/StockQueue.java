@@ -25,7 +25,7 @@ public class StockQueue
             return;
         }
         Company thing = sQueue.poll();
-        OwnedCompany other = new OwnedCompany(thing.getstockPrice(), thing.getpreviousClose(), thing.getinNews(), thing.getnegPublicity(), thing.getposPublicity(), thing.getdirectcompetition(), thing.gettappedMarket(), thing.getname());
+        OwnedCompany other = new OwnedCompany(thing.getstockPrice(), thing.getpreviousClose(), thing.getinNews(), thing.getnegPublicity(), thing.getposPublicity(), thing.getdirectCompetition(), thing.gettappedMarket(), thing.getname());
         oQueue.add(other);
         System.out.println(thing.getname() + " has been bought. " + thing);
     }
@@ -48,7 +48,7 @@ public class StockQueue
             return;
         }
         OwnedCompany thing = oQueue.poll();
-        Company other = new Company(thing.getstockPrice(), thing.getpreviousClose(), thing.getinNews(), thing.getnegPublicity(), thing.getposPublicity(), thing.getdirectcompetition(), thing.gettappedMarket(), thing.getname());
+        Company other = new Company(thing.getstockPrice(), thing.getpreviousClose(), thing.getinNews(), thing.getnegPublicity(), thing.getposPublicity(), thing.getdirectCompetition(), thing.gettappedMarket(), thing.getname());
         sQueue.add(other);
         System.out.println(thing.getname() + " has been sold. " + thing);
     }
