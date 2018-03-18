@@ -12,10 +12,10 @@ public class ObtainData
 {
     public ObtainData()
     {
-        
+
     }
 
-    public static void otherMain(String[] args)
+    public static void otherMain(String[] args) 
     {
         /*try{
         URL oracle = new URL("https://www.oracle.com/index.html");
@@ -54,7 +54,7 @@ public class ObtainData
         i = betterFind(line, "<span class=.posData.>(.)(\\d+\\.\\d+)\\%</span>", data, i, true, true);
         System.out.println(data.get(i-1));
         //Company Dow = new Company(d
-        
+
         /*String regex = "\\d\\d,\\d\\d\\d\\.\\d\\d";
         Pattern p = Pattern.compile(regex);
         Matcher m = p.matcher(line);*/
@@ -140,20 +140,14 @@ public class ObtainData
         double thingy = Double.parseDouble(thing.substring(1,3) + thing.substring(3,7));
         System.out.println(thingy);
     }
-    
+
     public static void main(String[] args)
     {
-        
         JFrame frame = new JFrame();
-        frame.setSize(600,600);
+        frame.setSize(600,100);
         frame.setTitle("Extra Research");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        JPanel mainPanel = new JPanel();
-        mainPanel.setLayout(new BorderLayout());
-
         JPanel checkBoxPanel = new JPanel();
-        JPanel buttonPanel = new JPanel();
-
         JCheckBox iNews = new JCheckBox("In News");
         checkBoxPanel.add(iNews);
         JCheckBox nPub = new JCheckBox("Negative Publicity");
@@ -163,13 +157,17 @@ public class ObtainData
         JCheckBox dComp = new JCheckBox("Direct Competition");
         checkBoxPanel.add(dComp);
         JButton button = new JButton("Start Program");
-        mainPanel.add(checkBoxPanel);
-        mainPanel.add(buttonPanel);
-
-        frame.add(mainPanel);
-
-        frame.pack();
+        checkBoxPanel.add(button);
+        frame.add(checkBoxPanel);
+        //frame.pack();
         frame.setLocationByPlatform(true);
         frame.setVisible(true);
+        button.addActionListener(new Action());
+    }
+    static class Action implements ActionListener
+    {
+        public void actionPerformed(ActionEvent e){
+            System.out.println("Worked");
+        }
     }
 }
